@@ -1,6 +1,6 @@
 class Person{
-    firstName:string
-    lastName:string
+    readonly firstName:string
+    readonly lastName:string
     age:number
 
     constructor(fname:string,lname:string,age:number){
@@ -15,6 +15,14 @@ class Person{
             age: ${this.age}`);
     }
 }
+class Employee extends Person{
+    designation:string
+    constructor(fname:string,lname:string,age:number,desg:string){
+        super(fname,lname,age);
+        this.designation = desg;
+    }
+}
 
-let p1:Person= new Person("Vijay","Mallya",68);
+let p1:Person= new Employee("Vijay","Mallya",68,"Manager");
+p1.firstName="Siddharth";
 p1.print();
