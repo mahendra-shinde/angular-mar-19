@@ -1,4 +1,4 @@
-<script>
+<script >
 function quote(literals, ...placeholders){
    let rs = '';
    for(i=0;i<placeholders.length;i++){
@@ -10,6 +10,6 @@ function quote(literals, ...placeholders){
 }
 x = 100;
 y = 50;
-msg = "Value of x ${x},and y ${y}";
+msg = quote `Value of x ${x},and y ${y}`;
 document.write(msg);
 </script>
