@@ -1,0 +1,19 @@
+Object in JS (JSON)
+
+emp = 
+    { "fname":"Rohit",
+        "lname":"shetty",
+        "fav_toy":"mahindra scorpio" 
+    }
+
+Test properties
+emp.fname
+emp.lname
+emp.fav_toy
+=================================
+Destructuring objects in ES6
+
+let {fname:x, lname:y, fav_toy:t } = emp;
+x
+y
+t
