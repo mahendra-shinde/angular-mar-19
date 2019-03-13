@@ -1,0 +1,15 @@
+<script>
+function quote(literals, ...placeholders){
+   let rs = '';
+   for(i=0;i<placeholders.length;i++){
+      rs += literals[i];
+      rs += "<b>"+placeholders[i]+"</b>";
+	}
+	rs+literals[literals.length-1];
+	return rs;
+}
+x = 100;
+y = 50;
+msg = "Value of x ${x},and y ${y}";
+document.write(msg);
+</script>
