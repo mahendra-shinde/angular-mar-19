@@ -3,11 +3,21 @@
   <h1>
     Welcome {{ title }}!
   </h1>
-  <ol> <!-- Java ForLoop for(Product x:productList) -->
-  <li *ngFor="let x of productList">
-    {{ x.name }} {{ x.price }}
-  </li>
-  </ol>
+  <table>
+    <thead>
+      <tr>
+        <td>Product ID</td>
+        <td>Name</td>
+        <td>Price</td>
+      </tr>
+    </thead>
+    <tbody>
+    <!-- Java ForLoop for(Product x:productList) -->
+  <tr *ngFor="let x of productList">
+    <td>{{ x.productId }}</td> <td>{{ x.name }}</td> <td>{{ x.price }} <a href="#"  (click)="raisePrice(x)">Raise</a> </td>
+    
+  </tr></tbody>
+</table>
   
 </div>
 <h2>Here are some links to help you start: </h2>

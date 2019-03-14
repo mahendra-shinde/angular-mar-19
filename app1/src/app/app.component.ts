@@ -17,4 +17,9 @@ export class AppComponent {
     {productId:101, name:"Colgate Total", price:48 }, 
     {productId:102, name:"Colgate Sensitive", price:78 }
   ];
+
+  raisePrice(p:Product):void{
+    console.log("Raising Price of "+p.name+" by 1 Rs");
+    p.price ++;
+  }
 }
