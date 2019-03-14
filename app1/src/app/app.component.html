@@ -3,6 +3,9 @@
   <h1>
     Welcome {{ title }}!
   </h1>
+  <h2>Test Expressions</h2>
+  Comparison: {{ 10 > 2}} <br />
+  Addition {{ 10+4 }}
   <table>
     <thead>
       <tr>
@@ -12,13 +15,18 @@
       </tr>
     </thead>
     <tbody>
-    <!-- Java ForLoop for(Product x:productList) -->
-  <tr *ngFor="let x of productList">
-    <td>{{ x.productId }}</td> <td>{{ x.name }}</td> <td>{{ x.price }} <a href="#"  (click)="raisePrice(x)">Raise</a> </td>
-    
-  </tr></tbody>
-</table>
-  
+      <!-- Java ForLoop for(Product x:productList) -->
+      <tr *ngFor="let x of productList">
+        <td>{{ x.productId }}</td>
+        <td>{{ x.name }}</td>
+        <td>{{ x.price }}
+          <a href="#" (click)="raisePrice(x)">Raise</a>
+        </td>
+
+      </tr>
+    </tbody>
+  </table>
+  <app-person></app-person>
 </div>
 <h2>Here are some links to help you start: </h2>
 <ul>
