@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input, NgModule } from '@angular/core';
+import { TouchSequence } from 'selenium-webdriver';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app2';
+  color: string = 'brown';
+  name: string = 'mahendra';
 }
