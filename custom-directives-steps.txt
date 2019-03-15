@@ -1,0 +1,37 @@
+# Example of custom directives
+
+1. open app.component.ts file
+  Add following new class
+
+    @Directive(
+    {
+        selector: "[apply-border]"
+    }
+    )
+    export class borderDirective {
+    constructor(private ref: ElementRef, private render: Renderer) {
+        render.setElementStyle(ref.nativeElement, 'border', '2pt solid red');
+    }
+    }
+
+2.  open app.module.ts
+    goto "ngModule" decoration and add new class
+    @NgModule({
+    declarations: [
+        AppComponent,
+        borderDirective
+    ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule
+    ],
+    providers: [],
+    bootstrap: [AppComponent]
+    })
+    export class AppModule { }
+
+3.  open app.component.html file add new Element
+
+        <div apply-border>
+        <h2>Example 1 of Custom directive</h2>
+        </div>

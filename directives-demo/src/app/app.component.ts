@@ -1,4 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef, Renderer, Directive } from '@angular/core';
+
+@Directive(
+  {
+    selector: "[apply-border]"
+  }
+)
+export class borderDirective {
+  constructor(private ref: ElementRef, private render: Renderer) {
+    render.setElementStyle(ref.nativeElement, 'border', '2pt solid red');
+  }
+}
 
 @Component({
   selector: 'app-root',

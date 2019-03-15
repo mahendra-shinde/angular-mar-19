@@ -1,9 +1,18 @@
 <div>
   <h2>Choose your style: </h2>
   <select #select1 (change)="updateStyle(select1.value)">
-    <option *ngFor="let x of clsNames" value="{{x}}">{{x}}</option>
+    <option *ngFor="let x of clsNames;let i=index" value="{{x}}">
+      {{i+1}}-{{x}}</option>
   </select>
 </div>
 <div [ngClass]=" clsName">
   <h1>Hello World</h1>
+</div>
+
+<div apply-border>
+  <h2>Example 1 of Custom directive</h2>
+</div>
+
+<div ngNonBindable>
+  Current style : {{ clsName }}
 </div>
