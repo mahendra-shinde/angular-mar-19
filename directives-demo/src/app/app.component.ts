@@ -1,4 +1,13 @@
 import { Component, OnInit, ElementRef, Renderer, Directive, HostListener, HostBinding } from '@angular/core';
+import { Direct } from 'protractor/built/driverProviders';
+
+@Directive({ selector: "[show-price]" })
+export class ShowPriceDirective {
+
+  constructor(private ref: ElementRef, private render: Renderer) {
+    render.setElementProperty(ref.nativeElement, 'value', 'INR 100.00');
+  }
+}
 
 @Directive(
   {
