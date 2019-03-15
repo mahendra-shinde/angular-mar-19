@@ -1,4 +1,4 @@
-import { Component, OnInit, ElementRef, Renderer, Directive } from '@angular/core';
+import { Component, OnInit, ElementRef, Renderer, Directive, HostListener } from '@angular/core';
 
 @Directive(
   {
@@ -9,6 +9,11 @@ export class borderDirective {
   constructor(private ref: ElementRef, private render: Renderer) {
     render.setElementStyle(ref.nativeElement, 'border', '2pt solid red');
   }
+
+  @HostListener('mouseover') onHover() {
+    this.render.setElementStyle(this.ref.nativeElement, 'border', '2pt solid blue');
+  }
+  //TODO: Add mouseOut event to restore the style!
 }
 
 @Component({

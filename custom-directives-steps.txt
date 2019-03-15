@@ -35,3 +35,12 @@
         <div apply-border>
         <h2>Example 1 of Custom directive</h2>
         </div>
+
+4.  Open "app.component.ts" goto newly created 'borderDirective'
+    add new method 
+    @HostListener('mouseover') onHover() {
+        this.render.setElementStyle(this.ref.nativeElement, 'border', '2pt solid blue');
+    }
+
+5.  Run application and place mouse pointer on "Example 1"
+6.  Add one more HostListener for mouseout event to restore the style
