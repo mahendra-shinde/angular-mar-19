@@ -44,3 +44,14 @@
 
 5.  Run application and place mouse pointer on "Example 1"
 6.  Add one more HostListener for mouseout event to restore the style
+
+7. Add new property in 'borderDirective' class
+    @HostBinding('style.width') private width: string;
+
+8. Update the listener methods (onHover)
+   this.width = '60%';
+
+p.  Update the constructor
+     this.width = '100%';
+
+

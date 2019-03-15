@@ -1,4 +1,4 @@
-import { Component, OnInit, ElementRef, Renderer, Directive, HostListener } from '@angular/core';
+import { Component, OnInit, ElementRef, Renderer, Directive, HostListener, HostBinding } from '@angular/core';
 
 @Directive(
   {
@@ -6,12 +6,16 @@ import { Component, OnInit, ElementRef, Renderer, Directive, HostListener } from
   }
 )
 export class borderDirective {
+  @HostBinding('style.width') private width: string;
+
   constructor(private ref: ElementRef, private render: Renderer) {
     render.setElementStyle(ref.nativeElement, 'border', '2pt solid red');
+    this.width = '100%';
   }
 
   @HostListener('mouseover') onHover() {
     this.render.setElementStyle(this.ref.nativeElement, 'border', '2pt solid blue');
+    this.width = '60%';
   }
   //TODO: Add mouseOut event to restore the style!
 }
