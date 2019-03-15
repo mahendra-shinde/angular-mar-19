@@ -1,9 +1,9 @@
 <div>
   <h2>Displaying employee details: </h2>
   Employee ID: {{emp.empId}}<br />
-  Name : {{emp.firstName}} {{emp.lastName}}<br />
-  Date of Birth: {{emp.dob}}<br />
-  Date of Joining: {{emp.doj}} <br />
-  Salary : {{emp.salary}}<br />
+  Name : {{emp.firstName | uppercase }} {{emp.lastName | uppercase }}<br />
+  Date of Birth: {{emp.dob | date:'fullDate' }}<br />
+  Date of Joining: {{emp.doj | date:'longDate' }} <br />
+  Salary : {{emp.salary | currency:'INR' }}<br />
 
 </div>

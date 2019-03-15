@@ -1,0 +1,14 @@
+## Building custom pipes
+1. Open existing project / create new project
+2. On terminal
+    ng g class SquarePipe
+3. Open app.module.ts add new component
+    "SquarePipe" and press enter    
+4. Open SquarePipe.ts and add following lines
+    import { PipeTransform } from '@angular/core';
+
+    export class SquarePipe implements PipeTransform {
+        transform(value: number, arg: Array<any>): any {
+            return value * value;
+        }
+    }

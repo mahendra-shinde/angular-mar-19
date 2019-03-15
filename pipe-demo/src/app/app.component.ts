@@ -11,10 +11,12 @@ export class AppComponent {
 
   d1 = new Date(1989, 2, 13);
   d2 = new Date(2018, 4, 17);
-  emp: Employee = { firstName: "Manish", lastName: "Mansi",
-   dob: this.d1, 
-   doj: this.d2, 
-   empId: 101, 
-   salary: 13900 };
+  emp: Employee = {
+    firstName: "Manish", lastName: "Mansi",
+    dob: this.d1,
+    doj: this.d2,
+    empId: 101,
+    salary: 139668700
+  };
 
 }
