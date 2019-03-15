@@ -7,6 +7,10 @@
 4. Open SquarePipe.ts and add following lines
     import { PipeTransform } from '@angular/core';
 
+
+    @Pipe({
+        name: 'square'
+    })
     export class SquarePipe implements PipeTransform {
         transform(value: number, arg: Array<any>): any {
             return value * value;
