@@ -55,3 +55,20 @@
     <div [ngClass]="clsName">
         <h1>Hello World</h1>
     </div>
+
+9.  Open "app.component.ts" and add new method:
+
+     updateStyle(x: string): void {
+        this.clsName = x;
+     }
+10. Replace the old contents of "app.component.html" with new
+        <div>
+        <h2>Choose your style: </h2>
+        <select #select1 (change)="updateStyle(select1.value)">
+            <option *ngFor="let x of clsNames" value="{{x}}">{{x}}</option>
+        </select>
+        </div>
+        <div [ngClass]="clsName">
+        <h1>Hello World</h1>
+        </div>
+   

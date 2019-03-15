@@ -14,4 +14,9 @@ export class AppComponent implements OnInit {
     this.clsName = 'style1';
     this.clsNames = ['style1', 'style2', 'style3'];
   }
+
+  updateStyle(x: string): void {
+    console.log("Updating Stylename! " + x);
+    this.clsName = x;
+  }
 }
