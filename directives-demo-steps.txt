@@ -35,4 +35,23 @@
     </select>
     </div>
 
+7. Open "app.component.css" file
+    add following lines:
+    .style1{
+        background-color: orange;
+        border: 2pt solid blue;
+    }
+    .style2{
+        background-color: green;
+        border: 2pt solid red;
+    }
+    .style3{
+        background-color: magenta;
+        border: 2pt solid green;
+    }
 
+8.  Open "app.component.html" 
+    add following lines at the end :
+    <div [ngClass]="clsName">
+        <h1>Hello World</h1>
+    </div>
