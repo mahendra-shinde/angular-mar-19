@@ -1,0 +1,14 @@
+1. Open an existing project folder in visual studio code
+2. from terminal, execute following command:
+	ng g s myservice
+3. open file myservice.service.ts
+    Add following lines inside constructor!
+
+      console.log("Creating service myservice");
+
+4. open app.module.ts
+    goto "providers" and add "myservice"
+    
+    providers: [MyserviceService],
+
+5.  Open "app.component.ts"

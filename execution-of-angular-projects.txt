@@ -1,0 +1,17 @@
+What happens when we run
+    $ npm start
+
+1. Verifies the existance of "package.json"
+2. Install necessary packages (dependencies)
+    from "package.json"
+3. Invokes "ng serve" command
+4. [ng-serve] Compiles all TS files
+5. Load main.ts 
+6. [main.ts] start loading all components of projects
+7. [main.ts] merge the view component 
+        (app.component.html, app.component.css)
+        into a single html template
+8. [main.ts] replace "app-root" tag in "index.html"
+    with single html template from step 7
+9. npm launches built in HTTP Server
+10. application is ready on localhost:4200
