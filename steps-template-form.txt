@@ -37,3 +37,10 @@
 5. Open "app.module.ts" and add new form import
 	FormsModule, ReactiveFormsModule
 
+6. Test run application to verify form and text field
+7. Add following expressions to "app.component.html" to test validation flags 	
+	 Is productname Valid : {{ formControl.controls.productName.valid }}<br />
+	 Is productName invalid : {{ formControl.controls.productName.invalid }}<br />
+8. TODO : Add one more field "price" with validation rule : min=10 max=100
+
+
