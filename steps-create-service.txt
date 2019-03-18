@@ -12,3 +12,8 @@
     providers: [MyserviceService],
 
 5.  Open "app.component.ts"
+    add constructor
+
+     constructor(private myservice: MyserviceService) {
+        console.log("Creating instance of AppComponent!");
+      }
