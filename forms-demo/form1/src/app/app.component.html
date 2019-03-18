@@ -1,10 +1,19 @@
 <div>
-  <form [formGroup]="formControl" (onSubmit)="onSubmit()">
+  <form [formGroup]="formControl" (ngSubmit)="onSubmit()">
     <label for="field1">Product Name:</label>
-    <input type="text" id="field1" [formControl]="formControl.controls['productName']" />
+
+    <input type="text" id="field1" [formControl]="formControl.controls['productName']" [(ngModel)]="productName" />
+
+    <label for="field2">Product Price:</label>
+    <input type="text" id="field2" [formControl]="formControl.controls['productPrice']" [(ngModel)]="productPrice" />
+
     <input type="submit" value="submit" /><br />
 
-    Is productname Valid : {{ formControl.controls.productName.valid }}<br />
-    Is productName invalid : {{ formControl.controls.productName.invalid }}<br />
+    <div *ngIf="formControl.controls.productName.invalid">
+      Please enter product name.
+    </div>
+    <div *ngIf="formControl.controls.productPrice.invalid">
+      Please enter valid price.
+    </div>
   </form>
 </div>

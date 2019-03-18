@@ -15,7 +15,9 @@ export class AppComponent implements OnInit {
   title = 'form1';
   constructor(fb: FormBuilder) {
     this.formControl = fb.group({
-      'productName': ['', Validators.required]
+      'productName': ['', Validators.required],
+      'productPrice': ['10', [Validators.min(10),
+      Validators.max(1000)]]
     });
   }
   ngOnInit() {
@@ -23,11 +25,15 @@ export class AppComponent implements OnInit {
 
   formControl: FormGroup;
   productName: String;
+  productPrice: number;
 
   onSubmit() {
+    console.log("Invoking submit!");
     if (this.formControl.invalid) {
       console.log("Form is Invalid!");
       return false;
     }
+    console.log("Form submitted successfuly!");
+    console.log("Values are : " + this.productName + " " + this.productPrice);
   }
 }
