@@ -25,24 +25,25 @@
 	List of vacancies
 
 6. 	open app.component.html and replace existing contents with:
-```
+	```
 	<div>
-  <h1>Example of Routing!</h1>
+	  <h1>Example of Routing!</h1>
 
-  <div>
-    <a [routerLink]="['/contactus']">Contact Us</a>
-    <a [routerLink]="['/aboutus']">About Us</a>
-    <a [routerLink]="['/vacancies']">Vacancies</a>
-  </div>
+	  <div>
+	    <a [routerLink]="['/contactus']">Contact Us</a>
+	    <a [routerLink]="['/aboutus']">About Us</a>
+	    <a [routerLink]="['/vacancies']">Vacancies</a>
+	  </div>
 
-  <div>
-    <!-- Placeholder for the child components!  -->
-    <router-outlet></router-outlet>
-  </div>
-</div>```
+	  <div>
+	    <!-- Placeholder for the child components!  -->
+    	<router-outlet></router-outlet>
+  	</div>
+	</div>
+	```
 
 7.	open "app.module.ts" and add new variable
-```
+	```
 	const routes: Routes = [
 	  	{ path: 'contactus', component: ContactusComponent },
 	  	{ path: 'aboutus', component: AboutusComponent },
@@ -95,7 +96,6 @@
 	3.2	Add following code inside Component class:
 	
 	```
-
 	  contact: string;
 	  ctype: string;
 
@@ -118,5 +118,4 @@
 	        this.contact = "Please specify contact type!";
 	    }
 	  }
-
 	```
