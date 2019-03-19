@@ -2,14 +2,16 @@
   <h1>Example of Routing!</h1>
 
   <div>
-    <a [routerLink]="['/contactus']">Contact Us</a>
-    <a [routerLink]="['/aboutus']">About Us</a>
-    <a [routerLink]="['/vacancies']">Vacancies</a>
+    <a [routerLink]="['/contactus/phone']" routerLinkActive="active">Contact Us on Phone</a>
+    <a [routerLink]="['/contactus/mail']" routerLinkActive="active">Contact Us on EMail</a>
+    <a [routerLink]="['/aboutus']" routerLinkActive="active">About Us</a>
+    <a [routerLink]="['/vacancies']" routerLinkActive="active">Vacancies</a>
   </div>
 
   <div>
     <!-- Placeholder for the child components!  -->
     <router-outlet></router-outlet>
-
+    <h2>Second !</h2>
+    <router-outlet></router-outlet>
   </div>
 </div>

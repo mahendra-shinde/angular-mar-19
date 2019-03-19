@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-contactus',
@@ -7,9 +8,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContactusComponent implements OnInit {
 
-  constructor() { }
+  contact: string;
+  ctype: string;
 
-  ngOnInit() {
+  constructor(private rout: ActivatedRoute) {
+    rout.params.subscribe(params => { this.ctype = params['ctype'] })
+    console.log("Received parameter: " + this.ctype);
+  }
+
+  ngOnInit() { }
+
+  ngDoCheck() {
+    switch (this.ctype) {
+      case "phone":
+        this.contact = "9988998811";
+        break;
+      case "mail":
+        this.contact = "dummy@dummyco.in";
+        break;
+      default:
+        this.contact = "Please specify contact type!";
+    }
   }
 
 }

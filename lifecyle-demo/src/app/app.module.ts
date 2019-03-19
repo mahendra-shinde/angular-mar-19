@@ -7,9 +7,10 @@ import { ContactusComponent } from './contactus/contactus.component';
 import { AboutusComponent } from './aboutus/aboutus.component';
 import { VacanciesComponent } from './vacancies/vacancies.component';
 import { Routes, RouterModule } from '@angular/router';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 const routes: Routes = [
-  { path: 'contactus', component: ContactusComponent },
+  { path: 'contactus/:ctype', component: ContactusComponent },
   { path: 'aboutus', component: AboutusComponent },
   { path: 'vacancies', component: VacanciesComponent }
 ]
@@ -27,7 +28,10 @@ const routes: Routes = [
     AppRoutingModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [],
+  //Services and Plugins 
+  providers: [
+    { provide: LocationStrategy, useClass: HashLocationStrategy }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
