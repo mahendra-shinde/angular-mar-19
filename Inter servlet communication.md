@@ -55,10 +55,50 @@
 		out.println("Hi, Today is "+date);
 		//Include dispatcher for page2
 		RequestDispatcher view = 
-				request.getRequestDispatcher("page2");
+				request.getRequestDispatcher("page2"); // Relative path
 		view.forward(request, response);
 		out.close();
 
 7.	Run on Server
 	
 	NOTE: Final response is from Page2Servlet only!
+
+## Servlet Context and Request Dispatcher
+	ServletContext context = getServletContext(); //Method from HttpServlet
+	RequestDispatcher view = 
+				context.getRequestDispatcher("/MyApp/page2"); // Absolute path
+		view.forward(request, response);
+
+## Request Attributes
+
+8.	Modify "doGet" method for "Page1Servlet":
+
+		Date date = new Date();
+		
+		//Storing data (attribute) for use by next servlet
+		request.setAttribute("today", date);
+		
+		//Include dispatcher for page2
+		RequestDispatcher view = 
+				request.getRequestDispatcher("page2");
+		//Request Forwarding (current servlet consume request
+		//	but produces no output)
+		view.forward(request, response);
+		
+9.	Modify "doGet" method for "Page2Servlet"
+
+		PrintWriter out = response.getWriter();
+		response.setContentType("text/plain");
+		//Retrieve Attribute from request
+		Object today = request.getAttribute("today");
+		out.println("Welcome to page2");
+		out.println("Today is "+today);
+		out.close();
+	
+
+
+
+
+
+
+
