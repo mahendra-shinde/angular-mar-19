@@ -123,6 +123,23 @@ NOTES:
 	2.	Redirecting Response (response.sendRedirect) can be used with different method types
 		doPost ==> doGet and doGet ==> doGet 
 
+## Servlet Listeners
+	Captures events like application started or stopped (ServletContextListener) 
+	and Request created (ServletRequestListener) etc
+
+12.		New -> Search for Listener --> select "Listener" - Ok
+		Classname:	MyListener
+		package:	com.cg
+
+		Choose Interface :	ServletContextListener
+
+13.		Add following line inside method "contextInitialized"
+    	System.out.println("Application deployed");
+
+14.		Add following line inside method "contextDestroyed"
+    	System.out.println("Application undeployed");
+
+15.		Run "Page1Servlet" on Server and check "Console"
 
 
 
