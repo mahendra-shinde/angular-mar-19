@@ -11,7 +11,7 @@ const routes: Routes = [
   { path: "add-user", component: AddUserComponent },
   { path: "list-users", component: ListUserComponent },
   { path: "show-user", component: ShowUserComponent },
-  { path: "edit-user", component: EditUserComponent }
+  { path: "edit-user/:id", component: EditUserComponent }
 ];
 
 @NgModule({

@@ -1,4 +1,19 @@
-<div>
-  <h2>edit-user works!</h2>
-  <button (click)="onSubmit()">Save</button>
+<div class="container">
+  <h2>Editing User # {{user.id}} </h2>
+  <form class="form" #form1="ngForm">
+    <div class="form-group">
+      <label for="f1">Enter firstname: </label>
+      <input type="text" name="firstName" id="f1" [(ngModel)]="user.firstName" required class="form-control" />
+    </div>
+    <div class="form-group">
+      <label for="f2">Enter lastname: </label>
+      <input name="lastName" class="form-control" id="f2" [(ngModel)]="user.lastName" required />
+    </div>
+    <div class="form-group">
+      <label for="f3">Enter age: </label>
+      <input type="number" class="form-control" name="age" id="f3" ([ngModel])="user.age" required />
+
+    </div>
+    <button (click)="onSubmit()" class="btn btn-success">Save</button>
+  </form>
 </div>

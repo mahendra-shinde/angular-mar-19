@@ -8,8 +8,9 @@ import { ShowUserComponent } from './show-user/show-user.component';
 import { EditUserComponent } from './edit-user/edit-user.component';
 import { ListUserComponent } from './list-user/list-user.component';
 import { AddUserComponent } from './add-user/add-user.component';
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { Routes } from '@angular/router';
+import { UserService } from './services/user.service';
 
 
 @NgModule({
@@ -23,9 +24,11 @@ import { Routes } from '@angular/router';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
-  providers: [],
+  providers: [UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
