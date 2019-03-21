@@ -1,19 +1,22 @@
 <div class="container">
   <h2>Editing User # {{user.id}} </h2>
-  <form class="form" #form1="ngForm">
+  <form class="form" #form1="ngForm" (ngSubmit)="onSubmit()">
     <div class="form-group">
-      <label for="f1">Enter firstname: </label>
-      <input type="text" name="firstName" id="f1" [(ngModel)]="user.firstName" required class="form-control" />
+      <label for="f1">First Name: </label>
+      <input type="text" name="firstName" id="f1" [(ngModel)]="user.firstName" required class="form-control"
+        #fname="ngModel" />
+      <div class="alert alert-danger" [hidden]="fname.valid||fname.pristine">Please provide first name </div>
     </div>
     <div class="form-group">
       <label for="f2">Enter lastname: </label>
-      <input name="lastName" class="form-control" id="f2" [(ngModel)]="user.lastName" required />
+      <input name="lastName" class="form-control" id="f2" [(ngModel)]="user.lastName" required #lname="ngModel" />
+      <div class="alert alert-danger" [hidden]="lname.valid||lname.pristine">Please enter last name</div>
     </div>
     <div class="form-group">
       <label for="f3">Enter age: </label>
-      <input type="number" class="form-control" name="age" id="f3" ([ngModel])="user.age" required />
-
+      <input name="age" class="form-control" [(ngModel)]="user.age" #age="ngModel" required />
+      <div class="alert alert-danger" [hidden]="age.valid||age.pristine">Please enter age</div>
     </div>
-    <button (click)="onSubmit()" class="btn btn-success">Save</button>
+    <button [disabled]="!form1.form.valid" type="submit" class="btn btn-success">Save</button>
   </form>
 </div>

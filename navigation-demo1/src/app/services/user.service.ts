@@ -8,8 +8,8 @@ export class UserService {
   private userList: Array<User> = [];
   constructor() {
     console.log("Populating sample users");
-    this.userList.push(new User(1, 'Jeetendra', 'Kapoor', '71'));
-    this.userList.push(new User(2, 'Dharmendra', 'Deol', '84'));
+    this.userList.push(new User(1, 'Jeetendra', 'Kapoor', 71));
+    this.userList.push(new User(2, 'Dharmendra', 'Deol', 84));
 
   }
 
@@ -26,7 +26,7 @@ export class UserService {
     if (temp) {
       temp.firstName = usr.firstName;
       temp.lastName = usr.lastName;
-      temp.age = usr.age;
+      temp.age = +usr.age;
     } else {
       console.log("User not found!");
     }

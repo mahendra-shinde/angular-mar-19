@@ -12,7 +12,6 @@ import { NgForm } from '@angular/forms';
 })
 export class EditUserComponent implements OnInit {
   user: User;
-  form1:NgForm;
 
   constructor(private router: Router, private route: ActivatedRoute, private userService: UserService) {
     this.route.params.subscribe(params => {
