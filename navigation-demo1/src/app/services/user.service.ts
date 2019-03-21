@@ -5,11 +5,12 @@ import { User } from '../models/user';
   providedIn: 'root'
 })
 export class UserService {
-  private userList: Array<User> = [{ firstName: "Jeetendra", lastName: "Kapoor", id: 1, age: 72 },
-  { firstName: "Dharmendra", lastName: "Deol", id: 2, age: 84 }];
-
+  private userList: Array<User> = [];
   constructor() {
     console.log("Populating sample users");
+    this.userList.push(new User(1, 'Jeetendra', 'Kapoor', '71'));
+    this.userList.push(new User(2, 'Dharmendra', 'Deol', '84'));
+
   }
 
   ngOnInit() {
