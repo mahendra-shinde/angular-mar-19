@@ -94,8 +94,34 @@
 		out.println("Welcome to page2");
 		out.println("Today is "+today);
 		out.close();
-	
 
+## Redirecting Client (Response) to next servlet/page
+
+	When redirection happens, address (url) in browser changes
+
+10.	Modify "doGet" method of Page1Servlet
+
+		Date date = new Date();
+		
+		//Cannot use "request" scopped attributes
+		//As, this would create new request & response
+		response.sendRedirect("page2?date="+date);
+
+11.	Modify "doGet" method of Page2Servlet
+
+		PrintWriter out = response.getWriter();
+		response.setContentType("text/plain");
+		String date=request.getParameter("date");
+		out.println("Welcome to page2");
+		out.println("Today is "+date);
+		out.close();
+
+
+NOTES:
+	1.	Internal Dispatches (view.forward & view.include) can be used with SAME METHOD types
+		doGet ==> doGet and doPost ==> doPost
+	2.	Redirecting Response (response.sendRedirect) can be used with different method types
+		doPost ==> doGet and doGet ==> doGet 
 
 
 
